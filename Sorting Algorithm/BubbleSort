@@ -1,0 +1,41 @@
+class BubbleSort {
+  public static void main(String args[]) {
+
+        //   Bubble sort 
+        // o(n^2)
+        // input 
+        int[] arr = {5, 1, 4, 2, 8};
+        printArray(arr);
+        System.out.println("-----------");
+        
+        
+        // looping until no number is swapped
+        for(int i = 0 ; i< arr.length; i++){
+            boolean swapped =false; // checking if swapped
+            for(int j = 0; j < arr.length-1; j++){
+                //comparing the consecutive number 
+                //the smallest goes to the left side
+                if(arr[j] > arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp; 
+                    printArray(arr);
+                    swapped = true;
+                }     
+            }
+            // if no swap took place the loop will break
+            if(!swapped){
+                break;
+            }   
+        } 
+    }
+     // Prints the array
+        public static void printArray(int arr[]){
+            int n = arr.length;
+            for (int i=0; i<n; ++i)
+                System.out.print(arr[i]+" ");
+            System.out.println();
+        }
+}
+    
+    
