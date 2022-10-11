@@ -1,0 +1,33 @@
+class SelectionSort{
+  public static void main(String args[]) {
+
+        //   Selection sort 
+        // o(n^2)
+        int[] arr = {64, 25, 12, 22, 11};
+        //storing the smallest index number
+        int smallestIndex; 
+        
+        for(int i= 0; i < arr.length - 1; i++){  //o(n)
+            smallestIndex = i;
+            //checking the smallest by iterating over the whole array again
+            for(int j = i+1; j < arr.length; j++){  //o(n*n) = o(n^2)
+                if(arr[smallestIndex] > arr[j]){
+                    smallestIndex = j;
+                }
+            }
+            //when found the smallest swapping the first index with the smallest
+            int tempnum = arr[i];
+            arr[i] = arr[smallestIndex];
+            arr[smallestIndex] = tempnum;
+            printArray(arr);
+        }
+    }
+    // Prints the array
+    public static void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i]+" ");
+        System.out.println();
+    }
+}
